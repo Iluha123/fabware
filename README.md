@@ -10,5 +10,4 @@ To start project you need:
 * npm i
 * bower i
 * gulp serve to start project
-* gulp test to run unit testing
 # fabware
