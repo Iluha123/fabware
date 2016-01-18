@@ -1,0 +1,10 @@
+<div class="bg-mod pr clearfix">
+  <p class="star pull-right" ng-click="mod.close()">
+      <span
+        class="f30 glyphicon glyphicon-remove red hover">
+      </span>
+  </p>
+  <h2 ng-if="mod.error" ng-bind="mod.error"></h2>
+
+  <div ng-if="!mod.error" ng-bind-html="mod.iframe"></div>
+</div>

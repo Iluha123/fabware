@@ -1,0 +1,52 @@
+.wrapper .jumbotron{
+	padding: 20px 20px;
+	background: #FBFBFB;
+	border: 1px solid #D2D3EF;
+  border-radius: 2px;
+  p, a{
+    font-size: 16px;
+  }
+  .star{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    z-index: 10;
+  }
+}
+.items-a{
+	transition: opacity 1s ease-in-out 0s;
+}
+.items-a.ng-enter{
+	opacity: 0;
+}
+.items-a.ng-enter.ng-enter-active,
+.items-a.ng-leave {
+    opacity: 1;
+}
+.items-a.ng-leave{
+    transition: none;
+}
+.w100{
+  max-width: 100%;
+  width: auto;
+}
+.help{
+  strong::after{
+    content: ',';
+  }
+  strong:last-child::after{
+    content: '';
+  }
+}
+.red{
+  color: #D41D1D !important;
+}
+.hover:hover{
+  cursor: pointer;
+  text-decoration: none !important;
+}
+.bg-btn-trailer{
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+}

@@ -1,0 +1,38 @@
+<div class="container">
+	<div class="page-header">
+	  <h1>TOP 20 <small>movies off all time</small></h1>
+	</div>
+  <div class="row items-a">
+    <div class="col-xs-12" ng-repeat="movie in top.movies track by $index">
+      <div class="jumbotron clearfix">
+        <p class="star" ng-click="top.addFavorite(movie)">
+          <span
+            class="f30 glyphicon hover"
+            ng-class="{
+              'glyphicon-star': top.activeFavorite(movie.idIMDB),
+              'glyphicon-star-empty': !top.activeFavorite(movie.idIMDB)}">
+          </span>
+        </p>
+        <div class="row">
+          <div class="col-lg-2 col-sm-3 col-xs-4">
+            <img class="w100" ng-src="{{movie.urlPoster}}" alt=""/>
+          </div>
+          <div class="col-lg-10 col-sm-9 col-xs-8">
+            <p><strong ng-bind="movie.title"></strong></p>
+            <p><span>year: </span><strong ng-bind="movie.year"></strong></p>
+            <p><span>rating: </span><strong ng-bind="movie.rating"></strong></p>
+            <p class="help"><span>genres: </span><strong ng-repeat="genr in movie.genres track by $index"> {{genr}}</strong> </p>
+            <p class="help"><span>countries: </span><strong ng-repeat="countries in movie.countries track by $index"> {{countries}}</strong></p>
+            <p>
+              <span>directors: </span>
+              <a ng-href="{{top.getUrlAuth(movie.directors[0].nameId)}}" target="_blank"><strong ng-bind="movie.directors[0].name"></strong></a>
+            </p>
+            <div class="btn-group bg-btn-trailer">
+              <button class="btn btn-primary" ng-click="top.watchTrailer(movie.idIMDB)">Trailer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	</div>
+</div>
